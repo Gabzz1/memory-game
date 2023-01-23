@@ -1,8 +1,14 @@
 /*Desktop*/
+/*Game Setup Start*/
+/*body{
+    width: 1440px;
+    height: 1024px;
+    background: #152938;
+}*/
 body{
     width: 1440px;
-    height: auto;
-    background: #152938;
+    height: 1024px;
+    background: #FCFCFC;
 }
 
 .setupStart-container{
@@ -12,7 +18,7 @@ body{
     top: 154px;
     left: 393px;
     overflow: hidden;
-    border: 1px solid red;
+    display: none;
 }
 .first-heading {
     position: absolute;
@@ -41,32 +47,28 @@ body{
     width: 542px;
     height: 93;
     left: 56px;
-    top: 64px;
-    border: 1px solid red;
+    top: 54px;
 }
 .number-section{
     position: absolute;
     width: 541px;
     height: 93;
     left: 56px;
-    top: 209px;
-    border: 1px solid red;
+    top: 199px; 
 }
 .grid-section {
     position: absolute;
     width: 542px;
     height: 93;
     left: 56px;
-    top: 345px;
-    border: 1px solid red;
+    top: 335px;
 }
 .start-rectangle {
     position: absolute;
     width: 541px;
     height: 70;
     left: 56px;
-    top: 481px;
-    border: 1px solid red;
+    top: 454px;
 }
 h3 {
     font-family: 'Atkinson Hyperlegible';
@@ -88,8 +90,7 @@ h3 {
     width: 542px;
     height: 52px;
     left: 0px;
-    top: 41px;
-    border: 1px solid red;
+    top: 31px;
 }
 .button-numbers{
     position: absolute;
@@ -121,4 +122,205 @@ h3 {
     line-height: 32px;
     text-align: center;
     color: #FCFCFC;
+}
+.number-of-players {
+    position: absolute;
+    height: 25px;
+    left: 0%;
+    right: 65.43%;
+    top: calc(50% - 25px/2 - 34px);
+}
+.button-group2 {
+    position: absolute;
+    width: 541px;
+    height: 52px;
+    left: 0px;
+    top: 31px;
+}
+.button-one {
+    position: absolute;
+    width: 119px;
+    height: 52px;
+    background: #304859;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.button-two {
+    position: absolute;
+    width: 119px;
+    height: 52px;
+    left: 140px;
+    background: #BCCED9;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.button-three {
+    position: absolute;
+    width: 119px;
+    height: 52px;
+    left: 281px;
+    background: #BCCED9;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.button-four {
+    position: absolute;
+    width: 119px;
+    height: 52px;
+    left: 422px;
+    background: #BCCED9;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.grid-size {
+    position: absolute;
+    height: 25px;
+    left: 0%;
+    right: 83.76%;
+    top: calc(50% - 25px/2 - 34px);
+}
+.button-group3 {
+    position: absolute;
+    width: 542px;
+    height: 52px;
+    left: 0px;
+    top: 31px;
+}
+.button-grid4 {
+    position: absolute;
+    width: 256px;
+    height: 52px;
+    background: #304859;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.button-grid6 {
+    position: absolute;
+    width: 256px;
+    height: 52px;
+    left: 286px;
+    background: #BCCED9;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.start-button {
+    position: absolute;
+    width: 541px;
+    height: 70px;
+    background: #FDA214;
+    border-radius: 35px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #FCFCFC;
+}
+/*Game Setup end*/
+
+/*Game Board Starts*/
+/*6x6 Multiplayer Board*/
+.controls-container {
+    overflow: hidden;
+    background: #FCFCFC;
+}
+#menu-bar {
+    position: absolute;
+    width: 1110px;
+    height: 52px;
+    left: 165px;
+    top: 67px;
+    border:1px solid red;
+}
+#memory{
+    position: absolute;
+    width: 150.04px;
+    height: 26.85px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+}
+.game-board-start-btn-group{
+    position: absolute;
+    width: 292px;
+    height: 52px;
+    left: 807px;
+    border:1px solid red;
+}
+#restart-btn {
+    position: absolute;
+    height: 52px;
+    width: 127px;
+    background: #FDA214;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #FCFCFC;
+}
+#new-game-btn {
+    position: absolute;
+    height: 52px;
+    width: 149px;
+    left: 143px;
+    background: #DFE7EC;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    color: #304859;
 }
