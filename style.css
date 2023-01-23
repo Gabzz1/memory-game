@@ -2,4 +2,123 @@
 body{
     width: 1440px;
     height: auto;
+    background: #152938;
+}
+
+.setupStart-container{
+    position: absolute;
+    width: 654px;
+    height: 687px;
+    top: 154px;
+    left: 393px;
+    overflow: hidden;
+    border: 1px solid red;
+}
+.first-heading {
+    position: absolute;
+    left: 38.23%;
+    right: 38.38%;
+    width: 153px;
+    height: 50px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    color: #FCFCFC;
+}
+.rectangle {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 18.63%;
+    bottom: 0%;
+    background: #FCFCFC;
+    border-radius: 20px;
+}
+.theme-section {
+    position: absolute;
+    width: 542px;
+    height: 93;
+    left: 56px;
+    top: 64px;
+    border: 1px solid red;
+}
+.number-section{
+    position: absolute;
+    width: 541px;
+    height: 93;
+    left: 56px;
+    top: 209px;
+    border: 1px solid red;
+}
+.grid-section {
+    position: absolute;
+    width: 542px;
+    height: 93;
+    left: 56px;
+    top: 345px;
+    border: 1px solid red;
+}
+.start-rectangle {
+    position: absolute;
+    width: 541px;
+    height: 70;
+    left: 56px;
+    top: 481px;
+    border: 1px solid red;
+}
+h3 {
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #7191A5;
+}
+.select-theme{
+    position: absolute;
+    height: 25px;
+    left: 0%;
+    right: 76.01%;
+    top: calc(50% - 25px/2 - 34px);
+}
+.button-group1{
+    position: absolute;
+    width: 542px;
+    height: 52px;
+    left: 0px;
+    top: 41px;
+    border: 1px solid red;
+}
+.button-numbers{
+    position: absolute;
+    width: 256px;
+    height: 52px;
+    background: #304859;
+    border-radius: 26px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.button-icons{
+    position: absolute;
+    background: #BCCED9;
+    border-radius: 26px;
+    left: 52.77%;
+    width: 256px;
+    height: 52px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;   
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
 }

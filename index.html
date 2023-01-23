@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Memory game</title>
 </head>
 <body>
@@ -13,34 +15,34 @@
   <!-- Game setup start -->
   <div class="setupStart-container">
     <div class="setupStart-heading">
-      <h1>memory</h1>
+      <h1 class="first-heading">memory</h1>
     </div>
     <div class="rectangle">
-      <div>
-        <h3>Select Theme</h3>
-        <div class="button-group">
-          <div class="button-numbers" type="submit">Numbers</div>
-          <div class="button-icons" type="submit">Icons</div>
+      <div class="theme-section">
+        <h3 class="select-theme">Select Theme</h3>
+        <div class="button-group1">
+          <button type="submit" class="button-numbers">Numbers</button>
+          <button class="button-icons" type="submit">Icons</button>
         </div>
       </div>
-      <div>
+      <div class="number-section">
         <h3>Number of Players</h3>
         <div class="button-group">
-          <div class="button-one" type="submit">1</div>
-          <div class="button-two" type="submit">2</div>
-          <div class="button-three" type="submit">3</div>
-          <div class="button-four" type="submit">4</div>
+          <button class="button-one" type="submit">1</button>
+          <button class="button-two" type="submit">2</button>
+          <button class="button-three" type="submit">3</button>
+          <button class="button-four" type="submit">4</button>
         </div>
       </div>
-      <div>
+      <div class="grid-section">
         <h3> Grid Size</h3>
         <div class="button-group">
-          <div class="button-grid4" type="submit">4x4</div>
-          <div class="button-grid6" type="submit">6x6</div>
+          <button class="button-grid4" type="submit">4x4</button>
+          <button class="button-grid6" type="submit">6x6</button>
         </div>
       </div>
-      <div>
-        <div class="start-rectangle">Start Game</div>
+      <div class="start-rectangle">
+        <button type="submit">Start Game</button>
       </div>
 
     </div>
