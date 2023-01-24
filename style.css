@@ -9,6 +9,7 @@ body{
     width: 1440px;
     height: 1024px;
     background: #FCFCFC;
+    border: 1px solid red;
 }
 
 .setupStart-container{
@@ -323,4 +324,161 @@ h3 {
     line-height: 25px;
     text-align: center;
     color: #304859;
+}
+.wrapper {
+    position: absolute;
+    box-sizing: content-box;
+    width: 572px;
+    height: 572px;
+    background-color: #FCFCFC;
+    transform: translate(-50%, -50%);
+    left: 484px;
+    top: 380px;
+    border: 1px solid red;
+}
+.stats-container {
+    position: absolute;
+    width: 1110px;
+    height: 130px;
+    top: 829px;
+    border: 1px solid red;
+}
+#player1{
+    position: absolute;
+    width: 255px;
+    height: 72px;
+    text-align: left;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7191A5;
+    background: #DFE7EC;
+    border-radius: 10px;
+    border-width: 0px;
+}
+#player2{
+    position: absolute;
+    width: 255px;
+    height: 72px;
+    left: 290px;
+    bottom: 58px;
+    text-align: left;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7191A5;
+    background: #DFE7EC;
+    border-radius: 10px;
+    border-width: 0px;
+}
+#player3{
+    position: absolute;
+    width: 255px;
+    height: 72px;
+    left: 575px;
+    bottom: 58px;
+    text-align: left;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7191A5;
+    background: #DFE7EC;
+    border-radius: 10px;
+    border-width: 0px;
+}
+#player4{
+    position: absolute;
+    width: 255px;
+    height: 72px;
+    left: 855px;
+    bottom: 58px;
+    text-align: left;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7191A5;
+    background: #DFE7EC;
+    border-radius: 10px;
+    border-width: 0px;
+}
+#moves-count{
+    position: absolute;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: right;
+    color: #304859;
+}
+#current-turn {
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #152938;
+    border: 1px solid red;
+}
+#current-turn2 {
+    position: absolute;
+    top: 77px;
+    left: 350px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #152938;
+    border: 1px solid red;
+}
+#current-turn3 {
+    position: absolute;
+    top: 77px;
+    left: 640px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #152938;
+    border: 1px solid red;
+}
+#current-turn4 {
+    position: absolute;
+    top: 77px;
+    left: 920px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 5px;
+    color: #152938;
+    border: 1px solid red;
+}
+.current-players-turn{
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid #555;
 }
