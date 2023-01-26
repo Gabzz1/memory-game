@@ -307,6 +307,11 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
+#restart-btn:hover {
+    cursor: pointer;
+    background-color: #FFB84A;
+    ;
+}
 #new-game-btn {
     position: absolute;
     height: 52px;
@@ -322,6 +327,10 @@ h3 {
     line-height: 25px;
     text-align: center;
     color: #304859;
+}
+#new-game-btn:hover {
+    cursor: pointer;
+    background-color: #6395B8;
 }
 
 .stats-container {
@@ -348,6 +357,9 @@ h3 {
     border-radius: 10px;
     border-width: 0px;
 }
+#player1:active{
+    cursor: pointer;
+}
 #player2{
     position: absolute;
     width: 255px;
@@ -364,6 +376,9 @@ h3 {
     background: #DFE7EC;
     border-radius: 10px;
     border-width: 0px;
+}
+#player2:active{
+    cursor: pointer;
 }
 #player3{
     position: absolute;
@@ -382,6 +397,9 @@ h3 {
     border-radius: 10px;
     border-width: 0px;
 }
+#player3:active{
+    cursor: pointer;
+}
 #player4{
     position: absolute;
     width: 255px;
@@ -398,6 +416,9 @@ h3 {
     background: #DFE7EC;
     border-radius: 10px;
     border-width: 0px;
+}
+#player4:active{
+    cursor: pointer;
 }
 #moves-count{
     position: absolute;

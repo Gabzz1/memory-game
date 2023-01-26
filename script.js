@@ -53,11 +53,14 @@ function checkForMatch() {
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
 
   isMatch ? disableCards() : unflipCards();
+
 }
 
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+  firstCard.style.backgroundColor="#FDA214";
+  secondCard.style.backgroundColor="#FDA214";
 
   resetBoard();
 }
