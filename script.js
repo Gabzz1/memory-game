@@ -24,7 +24,16 @@ startButton.addEventListener("click", () => {
   */
 
 const cards = document.querySelectorAll('#cards');
-
+const cardId = 
+[document.querySelector('.fa-solid fa-1'),
+document.querySelector('.fa-solid fa-2'),
+document.querySelector('.fa-solid fa-3'),
+document.querySelector('.fa-solid fa-4'),
+document.querySelector('.fa-solid fa-5'),
+document.querySelector('.fa-solid fa-6'),
+document.querySelector('.fa-solid fa-7'),
+document.querySelector('.fa-solid fa-8'),
+document.querySelector('.fa-solid fa-9')]
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -49,11 +58,13 @@ function flipCard() {
 }
 
 function checkForMatch() {
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    for (let i = 0; i<cardId.length; i++){
+  let isMatch = firstCard.cardId[i] === secondCard.cardId[i];
 
+    }
   isMatch ? disableCards() : unflipCards();
-  firstCard.style.backgroundColor = "#FDA214";
-  secondCard.style.backgroundColor = "#FDA214";
+  console.log(firstCard.cardId[i]);
+  console.log(secondCard.cardId[i]);
 }
 
 function disableCards() {

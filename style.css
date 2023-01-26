@@ -484,7 +484,6 @@ h3 {
     grid-template-rows: auto auto auto auto auto auto;
 }
 #cards {
-    border: 1px solid red;
     text-align: center;
     align-items: center;
     background-color: #152938;
