@@ -1,17 +1,16 @@
 /*Desktop*/
 /*Game Setup Start*/
-/*body{
-    width: 1440px;
-    height: 1024px;
-    background: #152938;
-}*/
 body{
     width: 1440px;
     height: 1024px;
-    background: #FCFCFC;
-    border: 1px solid red;
+    background: #152938;
 }
-
+#gameStart{
+    width: 1440px;
+    height: 1024px;
+    background: #FCFCFC;
+    
+}
 .setupStart-container{
     position: absolute;
     width: 654px;
@@ -19,7 +18,6 @@ body{
     top: 154px;
     left: 393px;
     overflow: hidden;
-    display: none;
 }
 .first-heading {
     position: absolute;
@@ -246,7 +244,7 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
-.start-button {
+#start {
     position: absolute;
     width: 541px;
     height: 70px;
@@ -265,7 +263,7 @@ h3 {
 
 /*Game Board Starts*/
 /*6x6 Multiplayer Board*/
-.controls-container {
+#controls-container {
     overflow: hidden;
     background: #FCFCFC;
 }
@@ -325,24 +323,16 @@ h3 {
     text-align: center;
     color: #304859;
 }
-.wrapper {
-    position: absolute;
-    box-sizing: content-box;
-    width: 572px;
-    height: 572px;
-    background-color: #FCFCFC;
-    transform: translate(-50%, -50%);
-    left: 484px;
-    top: 380px;
-    border: 1px solid red;
-}
+
 .stats-container {
     position: absolute;
     width: 1110px;
     height: 130px;
+    left: 165px;
     top: 829px;
     border: 1px solid red;
 }
+
 #player1{
     position: absolute;
     width: 255px;
@@ -476,9 +466,10 @@ h3 {
     border: 1px solid red;
 }
 .current-players-turn{
-        width: 0;
-        height: 0;
-        border-left: 25px solid transparent;
-        border-right: 25px solid transparent;
-        border-bottom: 50px solid #555;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #555;
 }
+                                                           
