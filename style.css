@@ -472,4 +472,57 @@ h3 {
     border-right: 25px solid transparent;
     border-bottom: 50px solid #555;
 }
-                                                           
+#wrapper {
+    position: absolute;
+    border: 1px solid red;
+    width: 572px;
+    height: 572px;
+    left: 434px;
+    top: 204px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
+}
+#cards {
+    border: 1px solid red;
+    text-align: center;
+    align-items: center;
+    background-color: #152938;
+    border-radius: 41px;
+    width: 82px;
+    height: 82px;
+    margin-top: 5px;
+    margin-left: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.front-face{
+    transform: rotateY(180deg);
+}
+.flip-face{
+    background-color: #BCCED9;
+}
+.front-face, .back-face {
+    backface-visibility: hidden;
+}
+#cards:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+    background-color: #BCCED9;
+    cursor: pointer;
+}
+#cards.flip {
+    transform: rotateY(180deg);
+}
+i {
+    color: #FCFCFC;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 55px;
+    padding-top: 15px;
+    text-align: center;
+    align-items: center;
+}
