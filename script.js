@@ -165,7 +165,7 @@ const timeGenerator = () => {
       seconds = 0;
     }
     //set the format of the time before displaying
-    let secondsValue = seconds < 10 ? `${seconds}` : seconds;
+    let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
     let minutesValue = minutes < 10 ? `${minutes}` : minutes;
     timeValue.innerHTML = `${minutesValue}:${secondsValue}`;
   };

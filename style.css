@@ -640,6 +640,14 @@ i {
     top: 882px;
     border: 1px solid red;
 }
+.solo-stats-container-icons{
+    position: absolute;
+    width: 540px;
+    height: 72px;
+    left: 15px;
+    top: 682px;
+    border: 1px solid red;
+}
 #time{
     position: absolute;
     width: 255px;
