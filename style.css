@@ -420,15 +420,65 @@ h3 {
 #player4:active{
     cursor: pointer;
 }
-#moves-count{
+#moves-count1{
     position: absolute;
     font-family: 'Atkinson Hyperlegible';
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
-    text-align: right;
     color: #304859;
+    width: 21px;
+    height: 40px;
+    text-align: right;
+    left: 210px;
+    bottom: 15px;
+    border: 1px solid red;
+}
+#moves-count2{
+    position: absolute;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #304859;
+    width: 21px;
+    height: 40px;
+    text-align: right;
+    left: 210px;
+    bottom: 15px;
+    border: 1px solid red;
+}
+#moves-count3{
+    position: absolute;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #304859;
+    width: 21px;
+    height: 40px;
+    text-align: right;
+    left: 210px;
+    bottom: 15px;
+    border: 1px solid red;
+}
+#moves-count4{
+    position: absolute;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #304859;
+    width: 21px;
+    height: 40px;
+    text-align: right;
+    left: 210px;
+    bottom: 15px;
+    border: 1px solid red;
 }
 #current-turn {
     position: absolute;
