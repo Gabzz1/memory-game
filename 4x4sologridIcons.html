@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6b8eeb21dd.js" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Memory game</title>
+</head>
+<body id="gameStart">
+  <!-- Game board start -->
+  <div id="controls-container">
+    <div id="menu-bar">
+      <div id="memory">memory</div>
+      <div class="game-board-start-btn-group">
+        <button type="submit" id="restart-btn">Restart</button>
+        <button type="submit" id="new-game-btn">New Game</button>
+      </div>
+    </div>
+    <div id="wrapper4x4">
+        <div id="cards4x4" data-framework="one">
+            <i class="fa-solid fa-futbol front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="two">
+            <i class="fa-solid fa-anchor front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="three">
+            <i class="fa-solid fa-flask front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="four">
+            <i class="fa-solid fa-sun front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="five">
+            <i class="fa-solid fa-hand-spock front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="six">
+            <i class="fa-solid fa-bug front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="seven">
+            <i class="fa-regular fa-moon front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="eight">
+            <i class="fa-regular fa-snowflake front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="one">
+            <i class="fa-solid fa-futbol front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="two">
+            <i class="fa-solid fa-anchor front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="three">
+            <i class="fa-solid fa-flask front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="four">
+            <i class="fa-solid fa-sun front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="five">
+            <i class="fa-solid fa-hand-spock front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="six">
+            <i class="fa-solid fa-bug front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="seven">
+            <i class="fa-regular fa-moon front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+        <div id="cards4x4" data-framework="eight">
+            <i class="fa-regular fa-snowflake front-face padd"></i>
+            <div class="back-face"></div>
+        </div>
+
+    </div>
+    <!-- Multiplayer scores start -->
+    <div class="solo-stats-container">
+        <button type="submit" id="time">Time
+            <div id="time-count">0</div>
+          </button>
+        <button type="submit" id="numberOfMoves">Moves
+            <div id="moves-count1">0</div>
+          </button>
+
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
