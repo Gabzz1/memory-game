@@ -26,8 +26,11 @@ const moves = document.getElementById("moves-count1");
 const moves2 = document.getElementById("moves-count2");
 const moves3 = document.getElementById("moves-count3");
 const moves4 = document.getElementById("moves-count4");
+const movesSolo = document.getElementById("moves-count-solo");
+const timeValue = document.getElementById("time-count");
 const cards = document.querySelectorAll('#cards');
 const cards4x4 = document.querySelectorAll('#cards4x4');
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -51,9 +54,6 @@ function flipCard() {
   secondCard = this;
   secondCard.style.backgroundColor = "#BCCED9";
   movesCounter();
-  movesCounter2();
-  movesCounter3();
-  movesCounter4();
   checkForMatch();
 }
 
@@ -104,6 +104,7 @@ function resetBoard() {
     card.style.order = randomPos;
   });
 })();
+
 //4x4 shuffle function
 (function shuffle() {
   cards4x4.forEach(card => {
@@ -121,6 +122,7 @@ let movesCount = 0;
 let movesCount2 = 0;
 let movesCount3 = 0;
 let movesCount4 = 0;
+let movesCountSolo = 0;
 
 //create moves count function for each player
 const movesCounter = () => {
@@ -143,16 +145,29 @@ const movesCounter4 = () => {
   moves4.innerHTML = `${movesCount4}`;
 };
 
+const movesCounterSolo = () => {
+  movesCountSolo += 1;
+  movesSolo.innerHTML = `${movesCountSolo}`;
+};
+
 //create a function to select current player and read moves
-function currentPlayer(){
-  if(unflipCards(document.getElementById('player1')) === true) {
-    document.getElementById('player1').classList.remove('movesCount');
-    document.getElementById('player3').classList.remove('movesCount3');
-    document.getElementById('player4').classList.remove('movesCount4');
-  } else {
-    document.getElementById('player2').classList.remove('movesCount2');
-    document.getElementById('player3').classList.remove('movesCount3');
-    document.getElementById('player4').classList.remove('movesCount4');
-  }
-  
-}
+
+
+//set time
+let seconds = 0,
+  minutes = 0;
+
+const timeGenerator = () => {
+    seconds += 1;
+    //set the minutes
+    if (seconds >= 60) {
+      minutes += 1;
+      seconds = 0;
+    }
+    //set the format of the time before displaying
+    let secondsValue = seconds < 10 ? `${seconds}` : seconds;
+    let minutesValue = minutes < 10 ? `${minutes}` : minutes;
+    timeValue.innerHTML = `${minutesValue}:${secondsValue}`;
+  };
+
+  interval = setInterval(timeGenerator, 1000);

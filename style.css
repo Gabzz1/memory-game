@@ -632,3 +632,72 @@ i {
 .padd {
     padding-top: 35px;
 }
+.solo-stats-container {
+    position: absolute;
+    width: 540px;
+    height: 72px;
+    left: 450px;
+    top: 882px;
+    border: 1px solid red;
+}
+#time{
+    position: absolute;
+    width: 255px;
+    height: 72px;
+    background: #DFE7EC;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7191A5;
+    text-align: left;
+}
+#time-count {
+    position: absolute;
+    border: 1px solid red;
+    width: 62px;
+    height: 40px;
+    left: 175px;
+    bottom: 15px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: right;
+    color: #304859;
+}
+#numberOfMoves{
+    position: absolute;
+    width: 255px;
+    height: 72px;
+    left: 285px;
+    background: #DFE7EC;
+    border-radius: 10px;
+    border-width: 0px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #7191A5;
+    text-align: left;
+}
+#moves-count-solo {
+    position: absolute;
+    border: 1px solid red;
+    width: 38px;
+    height: 40px;
+    left: 200px;
+    bottom: 15px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: right;
+    color: #304859;
+}
