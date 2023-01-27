@@ -554,6 +554,17 @@ h3 {
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto auto;
 }
+#wrapper4x4 {
+    position: absolute;
+    border: 1px solid red;
+    width: 532px;
+    height: 532px;
+    left: 454px;
+    top: 224px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
+}
 #cards {
     text-align: center;
     align-items: center;
@@ -561,6 +572,19 @@ h3 {
     border-radius: 41px;
     width: 82px;
     height: 82px;
+    margin-top: 5px;
+    margin-left: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+#cards4x4 {
+    text-align: center;
+    align-items: center;
+    background-color: #152938;
+    border-radius: 59px;
+    width: 118px;
+    height: 118px;
     margin-top: 5px;
     margin-left: 5px;
     transform: scale(1);
@@ -582,7 +606,16 @@ h3 {
     background-color: #BCCED9;
     cursor: pointer;
 }
+#cards4x4:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+    background-color: #BCCED9;
+    cursor: pointer;
+}
 #cards.flip {
+    transform: rotateY(180deg);
+}
+#cards4x4.flip {
     transform: rotateY(180deg);
 }
 i {
@@ -595,4 +628,7 @@ i {
     padding-top: 15px;
     text-align: center;
     align-items: center;
+}
+.padd {
+    padding-top: 35px;
 }

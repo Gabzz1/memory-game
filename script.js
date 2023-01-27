@@ -27,6 +27,7 @@ const moves2 = document.getElementById("moves-count2");
 const moves3 = document.getElementById("moves-count3");
 const moves4 = document.getElementById("moves-count4");
 const cards = document.querySelectorAll('#cards');
+const cards4x4 = document.querySelectorAll('#cards4x4');
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -96,15 +97,24 @@ function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
 }
-
+//6x6 shuffle function
 (function shuffle() {
   cards.forEach(card => {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
 })();
+//4x4 shuffle function
+(function shuffle() {
+  cards4x4.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+})();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+cards4x4.forEach(card => card.addEventListener('click', flipCard));
+
 
 //Initialize moves count
 let movesCount = 0;
