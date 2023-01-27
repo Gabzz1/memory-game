@@ -603,14 +603,22 @@ h3 {
 #cards:active {
     transform: scale(0.97);
     transition: transform .2s;
-    background-color: #BCCED9;
+    background-color: #6395B8;
     cursor: pointer;
+}
+#cards:hover {
+    cursor: pointer;
+    background-color: #6395B8;
 }
 #cards4x4:active {
     transform: scale(0.97);
     transition: transform .2s;
-    background-color: #BCCED9;
+    background-color: #6395B8;
     cursor: pointer;
+}
+#cards4x4:hover {
+    cursor: pointer;
+    background-color: #6395B8;
 }
 #cards.flip {
     transform: rotateY(180deg);
