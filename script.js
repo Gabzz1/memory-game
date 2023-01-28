@@ -30,6 +30,10 @@ const movesSolo = document.getElementById("moves-count-solo");
 const timeValue = document.getElementById("time-count");
 const cards = document.querySelectorAll('#cards');
 const cards4x4 = document.querySelectorAll('#cards4x4');
+const wrapper4 = document.getElementById('wrapper4x4');
+const modal = document.getElementById("whole-page-result");
+const controls = document.getElementById("controls-container");
+const movesResult = document.getElementById("finished-moves");
 
 
 let hasFlippedCard = false;
@@ -50,6 +54,7 @@ function flipCard() {
 
     return;
   }
+  
 
   secondCard = this;
   secondCard.style.backgroundColor = "#BCCED9";
@@ -61,8 +66,18 @@ function flipCard() {
 function checkForMatch() {
     
   let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+  if (isMatch) {
+    disableCards();
+    winCount += 1;
+    if (winCount === 8){
+      movesResult.innerHTML = `${movesCount}`;
+      stopGame();
+    }
+  } else {
+    unflipCards();
+  }
 
-  isMatch ? disableCards() : unflipCards();
+  //isMatch ? disableCards() : unflipCards();
 
 
 }
@@ -123,6 +138,7 @@ let movesCount2 = 0;
 let movesCount3 = 0;
 let movesCount4 = 0;
 let movesCountSolo = 0;
+let winCount = 0;
 
 //create moves count function for each player
 const movesCounter = () => {
@@ -171,3 +187,12 @@ const timeGenerator = () => {
   };
 
   interval = setInterval(timeGenerator, 1000);
+
+
+  const stopGame = () => {
+    modal.classList.remove('hide');
+    controls.classList.add('hide');
+    clearInterval(interval);
+  }
+
+  
