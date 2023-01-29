@@ -36,6 +36,7 @@ const controls = document.getElementById("controls-container");
 const movesResult = document.getElementById("finished-moves");
 const timeResult = document.getElementById("finished-time");
 const setupNewGame = document.querySelector(".result-new-game");
+const restart = document.querySelector(".result-restart");
 
 
 let hasFlippedCard = false;
@@ -198,3 +199,10 @@ const timeGenerator = () => {
     clearInterval(interval);
   }
 
+
+  restart.addEventListener('click',
+  (restartSameGame = () => {
+    modal.classList.add('hide');
+    
+  })
+  );

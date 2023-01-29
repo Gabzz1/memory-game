@@ -273,7 +273,6 @@ h3 {
     height: 52px;
     left: 165px;
     top: 67px;
-    border:1px solid red;
 }
 #memory{
     position: absolute;
@@ -290,7 +289,6 @@ h3 {
     width: 292px;
     height: 52px;
     left: 807px;
-    border:1px solid red;
 }
 #restart-btn {
     position: absolute;
@@ -433,7 +431,6 @@ h3 {
     text-align: right;
     left: 210px;
     bottom: 15px;
-    border: 1px solid red;
 }
 #moves-count2{
     position: absolute;
@@ -556,7 +553,6 @@ h3 {
 }
 #wrapper4x4 {
     position: absolute;
-    border: 1px solid red;
     width: 532px;
     height: 532px;
     left: 454px;
@@ -646,7 +642,6 @@ i {
     height: 72px;
     left: 450px;
     top: 882px;
-    border: 1px solid red;
 }
 .solo-stats-container-icons{
     position: absolute;
@@ -654,7 +649,6 @@ i {
     height: 72px;
     left: 15px;
     top: 682px;
-    border: 1px solid red;
 }
 #time{
     position: absolute;
@@ -673,7 +667,6 @@ i {
 }
 #time-count {
     position: absolute;
-    border: 1px solid red;
     width: 62px;
     height: 40px;
     left: 175px;
@@ -704,7 +697,6 @@ i {
 }
 #moves-count-solo {
     position: absolute;
-    border: 1px solid red;
     width: 38px;
     height: 40px;
     left: 200px;
@@ -721,7 +713,6 @@ i {
     position: absolute;
     width: 654px;
     height: 510px;
-    border: 1px solid red;
     left: 393px;
     top: 257px;
 }
@@ -738,7 +729,6 @@ i {
     color: #152938;
     left: 210px;
     top: 35px;
-    border: 1px solid red;
 }
 .game-over {
     position: absolute;
@@ -753,7 +743,6 @@ i {
     line-height: 22px;
     text-align: center;
     color: #7191A5;
-    border: 1px solid red;
 }
 .result-stats-container {
     position: absolute;
@@ -761,7 +750,6 @@ i {
     height: 160px;
     left: 56px;
     top: 189px;
-    border: 1px solid red;
 }
 .time-box {
     position: absolute;
@@ -770,7 +758,6 @@ i {
     background: #DFE7EC;
     border-radius: 10px;
     border-width: 0px;
-    border: 1px solid red;
 }
 .moves-box {
     position: absolute;
@@ -780,7 +767,6 @@ i {
     background: #DFE7EC;
     border-radius: 10px;
     border-width: 0px;
-    border: 1px solid red;
 }
 .time-moves-box-content {
     position: absolute;
@@ -794,13 +780,11 @@ i {
     font-size: 18px;
     line-height: 22px;
     color: #7191A5;
-    border: 1px solid red;
 }
 #finished-time{
     position: absolute;
     width: 62px;
     height: 40px;
-    border: 1px solid red;
     left: 82.66%;
     top: 15px;
     font-family: 'Atkinson Hyperlegible';
@@ -815,7 +799,6 @@ i {
     position: absolute;
     width: 145px;
     height: 40px;
-    border: 1px solid red;
     left: 67.34%;
     top: 15px;
     font-family: 'Atkinson Hyperlegible';
@@ -832,7 +815,6 @@ i {
     height: 52px;
     left: 56px;
     top: 389px;
-    border: 1px solid red;
 }
 .result-restart {
     position: absolute;
