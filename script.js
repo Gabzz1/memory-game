@@ -34,6 +34,8 @@ const wrapper4 = document.getElementById('wrapper4x4');
 const modal = document.getElementById("whole-page-result");
 const controls = document.getElementById("controls-container");
 const movesResult = document.getElementById("finished-moves");
+const timeResult = document.getElementById("finished-time");
+const setupNewGame = document.querySelector(".result-new-game");
 
 
 let hasFlippedCard = false;
@@ -184,6 +186,7 @@ const timeGenerator = () => {
     let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
     let minutesValue = minutes < 10 ? `${minutes}` : minutes;
     timeValue.innerHTML = `${minutesValue}:${secondsValue}`;
+    timeResult.innerHTML = `${minutesValue}:${secondsValue}`;
   };
 
   interval = setInterval(timeGenerator, 1000);
@@ -191,8 +194,7 @@ const timeGenerator = () => {
 
   const stopGame = () => {
     modal.classList.remove('hide');
-    controls.classList.add('hide');
+    //controls.classList.add('hide');
     clearInterval(interval);
   }
 
-  
