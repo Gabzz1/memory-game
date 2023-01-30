@@ -34,6 +34,7 @@ const wrapper4 = document.getElementById('wrapper4x4');
 const modal = document.getElementById("whole-page-result");
 const controls = document.getElementById("controls-container");
 const movesResult = document.getElementById("finished-moves");
+const movesResult6x6 = document.getElementById("finished-moves-6x6");
 const timeResult = document.getElementById("finished-time");
 const setupNewGame = document.querySelector(".result-new-game");
 const restart = document.querySelector(".result-restart");
@@ -76,9 +77,14 @@ function checkForMatch() {
       movesResult.innerHTML = `${movesCount}`;
       stopGame();
     }
+    if (winCount === 18){
+      movesResult6x6.innerHTML = `${movesCount}`;
+      stopGame();
+    }
   } else {
     unflipCards();
   }
+    
 
   //isMatch ? disableCards() : unflipCards();
 

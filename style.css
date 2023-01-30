@@ -809,6 +809,20 @@ i {
     text-align: right;
     color: #304859;
 }
+#finished-moves-6x6 {
+    position: absolute;
+    width: 145px;
+    height: 40px;
+    left: 67.34%;
+    top: 15px;
+    font-family: 'Atkinson Hyperlegible';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: right;
+    color: #304859;
+}
 .result-button-container {
     position: absolute;
     width: 542px;
