@@ -106,7 +106,18 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
-.button-icons{
+.button-numbers:active{
+    background: #304859;
+    cursor: pointer;
+}
+.buttonColor{
+    background: #304859;
+}
+.button-numbers:hover{
+    background: #6395B8;
+    cursor: pointer;
+}
+#button-icons{
     position: absolute;
     background: #BCCED9;
     border-radius: 26px;
@@ -121,6 +132,14 @@ h3 {
     line-height: 32px;
     text-align: center;
     color: #FCFCFC;
+}
+.button-icons:active{
+    background: #304859;
+    cursor: pointer;
+}
+#button-icons:hover{
+    background: #6395B8;
+    cursor: pointer;
 }
 .number-of-players {
     position: absolute;
@@ -151,6 +170,10 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
+.button-one:hover{
+    background: #6395B8;
+    cursor: pointer;
+}
 .button-two {
     position: absolute;
     width: 119px;
@@ -166,6 +189,10 @@ h3 {
     line-height: 32px;
     text-align: center;
     color: #FCFCFC;
+}
+.button-two:hover{
+    background: #6395B8;
+    cursor: pointer;
 }
 .button-three {
     position: absolute;
@@ -183,6 +210,10 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
+.button-three:hover{
+    background: #6395B8;
+    cursor: pointer;
+}
 .button-four {
     position: absolute;
     width: 119px;
@@ -198,6 +229,10 @@ h3 {
     line-height: 32px;
     text-align: center;
     color: #FCFCFC;
+}
+.button-four:hover{
+    background: #6395B8;
+    cursor: pointer;
 }
 .grid-size {
     position: absolute;
@@ -228,6 +263,10 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
+.button-grid4:hover{
+    background: #6395B8;
+    cursor: pointer;
+}
 .button-grid6 {
     position: absolute;
     width: 256px;
@@ -244,6 +283,10 @@ h3 {
     text-align: center;
     color: #FCFCFC;
 }
+.button-grid6:hover{
+    background: #6395B8;
+    cursor: pointer;
+}
 #start {
     position: absolute;
     width: 541px;
@@ -258,6 +301,10 @@ h3 {
     line-height: 40px;
     text-align: center;
     color: #FCFCFC;
+}
+#start:hover{
+    background: #FFB84A;
+    cursor: pointer;
 }
 /*Game Setup end*/
 

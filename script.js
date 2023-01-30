@@ -38,7 +38,14 @@ const movesResult6x6 = document.getElementById("finished-moves-6x6");
 const timeResult = document.getElementById("finished-time");
 const setupNewGame = document.querySelector(".result-new-game");
 const restart = document.querySelector(".result-restart");
-
+const numbers = document.querySelector(".button-numbers");
+const icons = document.getElementById("button-icons");
+const one = document.querySelector(".button-one");
+const two = document.querySelector(".button-two");
+const three = document.querySelector(".button-three");
+const four = document.querySelector(".button-four");
+const grid4 = document.querySelector(".button-grid4");
+const grid6 = document.querySelector(".button-grid6");
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -212,3 +219,44 @@ const timeGenerator = () => {
     
   })
   );
+
+ function buttonColor() {
+  icons.style.backgroundColor = "#304859";
+  numbers.style.backgroundColor = "#BCCED9";
+ }
+ function buttonColor2() {
+  icons.style.backgroundColor = "#BCCED9";
+  numbers.style.backgroundColor = "#304859";
+ }
+ function buttonOne() {
+  one.style.backgroundColor = "#304859";
+  two.style.backgroundColor = "#BCCED9";
+  three.style.backgroundColor = "#BCCED9";
+  four.style.backgroundColor = "#BCCED9";
+ }
+ function buttonTwo() {
+  two.style.backgroundColor = "#304859";
+  one.style.backgroundColor = "#BCCED9";
+  three.style.backgroundColor = "#BCCED9";
+  four.style.backgroundColor = "#BCCED9";
+ }
+ function buttonThree() {
+  three.style.backgroundColor = "#304859";
+  two.style.backgroundColor = "#BCCED9";
+  one.style.backgroundColor = "#BCCED9";
+  four.style.backgroundColor = "#BCCED9";
+ }
+ function buttonFour() {
+  four.style.backgroundColor = "#304859";
+  two.style.backgroundColor = "#BCCED9";
+  three.style.backgroundColor = "#BCCED9";
+  one.style.backgroundColor = "#BCCED9";
+ }
+ function buttonGrid4() {
+  grid4.style.backgroundColor = "#304859";
+  grid6.style.backgroundColor = "#BCCED9";
+ }
+ function buttonGrid6() {
+  grid4.style.backgroundColor = "#BCCED9";
+  grid6.style.backgroundColor = "#304859";
+ }

@@ -22,24 +22,24 @@
       <div class="theme-section">
         <h3 class="select-theme">Select Theme</h3>
         <div class="button-group1">
-          <button type="submit" class="button-numbers">Numbers</button>
-          <button class="button-icons" type="submit">Icons</button>
+          <button type="submit" class="button-numbers"  onclick="buttonColor2()">Numbers</button>
+          <button id="button-icons" type="submit" onclick="buttonColor()">Icons</button>
         </div>
       </div>
       <div class="number-section">
         <h3 class="number-of-players">Number of Players</h3>
         <div class="button-group2">
-          <button class="button-one" type="submit">1</button>
-          <button class="button-two" type="submit">2</button>
-          <button class="button-three" type="submit">3</button>
-          <button class="button-four" type="submit">4</button>
+          <button class="button-one" type="submit" onclick="buttonOne()">1</button>
+          <button class="button-two" type="submit" onclick="buttonTwo()">2</button>
+          <button class="button-three" type="submit" onclick="buttonThree()">3</button>
+          <button class="button-four" type="submit" onclick="buttonFour()">4</button>
         </div>
       </div>
       <div class="grid-section">
         <h3 class="grid-size"> Grid Size</h3>
         <div class="button-group3">
-          <button class="button-grid4" type="submit">4x4</button>
-          <button class="button-grid6" type="submit">6x6</button>
+          <button class="button-grid4" type="submit" onclick="buttonGrid4()">4x4</button>
+          <button class="button-grid6" type="submit" onclick="buttonGrid6()">6x6</button>
         </div>
       </div>
       <div class="start-rectangle">
@@ -52,54 +52,7 @@
   
   <!-- Game setup end -->
 
-  <!-- Game board start -->
-  <div id="controls-container" class="hide">
-    <div id="menu-bar">
-      <div id="memory">memory</div>
-      <div class="game-board-start-btn-group">
-        <button type="submit" id="restart-btn">Restart</button>
-        <button type="submit" id="new-game-btn">New Game</button>
-      </div>
-    </div>
-    <!-- Multiplayer scores start -->
-    <div class="stats-container">
-        <button type="submit" id="player1">Player 1
-          <!-- P1 score -->
-          <div id="moves-count"></div>
-        </button>
-        <div id="current-turn">Current Turn</div>
-        <button type="submit" id="player2">Player 2
-          <!-- P2 score -->
-          <div id="moves-count"></div>
-        </button>
-        <p id="current-turn2">Current Turn</p>
-      <button type="submit" id="player3">Player 3
-        <!-- P3 score -->
-        <div id="moves-count"></div>
-      </button>
-      <p id="current-turn3">Current Turn</p>
-      <button type="submit" id="player4">Player 4
-        <!-- P4 score -->
-        <div id="moves-count"></div>
-      </button>
-      <p id="current-turn4">Current Turn</p>
-    </div>
-      <div class="hide"></div>
-    </div>
-  <!-- Game board end -->
-
-  <!-- Multiplayer scores start -->
-
-  <!-- Solo game time and moves counter start -->
-
-  Time
-  <!-- Time elapsed -->
-
-  Moves
-  <!-- Moves total -->
-  <!-- Solo game time and moves counter end -->
-
-  <!-- Game board end -->
+  
 
   <script src="script.js"></script>
 </body>
