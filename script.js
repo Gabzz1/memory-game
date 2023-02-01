@@ -1,27 +1,3 @@
-/*const controls = document.querySelector(".setupStart-container");
-const stopButton = document.getElementById("controls-container");
-const startButton = document.getElementById("start");
-const body = document.querySelector("body");
-
-
-
-//Start game
-startButton.addEventListener("click", () => {
-    /*movesCount = 0;
-    seconds = 0;
-    minutes = 0;
-    //controls amd buttons visibility
-    controls.classList.add("hide");
-    stopButton.classList.remove("hide");
-    startButton.classList.add("hide");
-    body.classList.add("hide");
-        //Start timer
-    //interval = setInterval(timeGenerator, 1000);
-    //initial moves
-    //moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
-    //initializer();
-  });
-  */
 const moves = document.getElementById("moves-count1");
 const moves2 = document.getElementById("moves-count2");
 const moves3 = document.getElementById("moves-count3");
@@ -46,6 +22,7 @@ const three = document.querySelector(".button-three");
 const four = document.querySelector(".button-four");
 const grid4 = document.querySelector(".button-grid4");
 const grid6 = document.querySelector(".button-grid6");
+
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -220,43 +197,73 @@ const timeGenerator = () => {
   })
   );
 
+
  function buttonColor() {
   icons.style.backgroundColor = "#304859";
   numbers.style.backgroundColor = "#BCCED9";
+  numbers.classList.remove('active');
  }
  function buttonColor2() {
   icons.style.backgroundColor = "#BCCED9";
   numbers.style.backgroundColor = "#304859";
+  icons.classList.remove('active');
  }
+
  function buttonOne() {
   one.style.backgroundColor = "#304859";
   two.style.backgroundColor = "#BCCED9";
   three.style.backgroundColor = "#BCCED9";
   four.style.backgroundColor = "#BCCED9";
+  one.classList.add('active');
  }
  function buttonTwo() {
   two.style.backgroundColor = "#304859";
   one.style.backgroundColor = "#BCCED9";
   three.style.backgroundColor = "#BCCED9";
   four.style.backgroundColor = "#BCCED9";
+  two.classList.add('active');
  }
  function buttonThree() {
   three.style.backgroundColor = "#304859";
   two.style.backgroundColor = "#BCCED9";
   one.style.backgroundColor = "#BCCED9";
   four.style.backgroundColor = "#BCCED9";
+  three.classList.add('active');
  }
  function buttonFour() {
   four.style.backgroundColor = "#304859";
   two.style.backgroundColor = "#BCCED9";
   three.style.backgroundColor = "#BCCED9";
   one.style.backgroundColor = "#BCCED9";
+  four.classList.add('active');
  }
+ 
  function buttonGrid4() {
   grid4.style.backgroundColor = "#304859";
   grid6.style.backgroundColor = "#BCCED9";
+  grid4.classList.add('active');
  }
  function buttonGrid6() {
   grid4.style.backgroundColor = "#BCCED9";
   grid6.style.backgroundColor = "#304859";
- }
+  grid6.classList.add('active');
+ }  
+
+
+
+
+function GoToRequiredPage() {
+    //window.location.href = '4x4sologridIcons.html';
+    /*if(numbers && three && grid6) {
+      window.location.href = '6x6multiplayergrid.html';
+    }
+    else if(icons && one && grid4) {
+        window.location.href = '4x4sologridIcons.html';
+      }*/
+      console.log(icons)
+  }
+
+
+
+
+

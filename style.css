@@ -137,6 +137,10 @@ h3 {
     background: #304859;
     cursor: pointer;
 }
+.active{
+    background-color: #304859;
+    cursor: pointer;
+}
 #button-icons:hover{
     background: #6395B8;
     cursor: pointer;
@@ -301,7 +305,10 @@ h3 {
     line-height: 40px;
     text-align: center;
     color: #FCFCFC;
+    left: 56px;
+    top: 454px;
 }
+
 #start:hover{
     background: #FFB84A;
     cursor: pointer;

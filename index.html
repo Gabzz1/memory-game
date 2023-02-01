@@ -22,38 +22,38 @@
       <div class="theme-section">
         <h3 class="select-theme">Select Theme</h3>
         <div class="button-group1">
-          <button type="submit" class="button-numbers"  onclick="buttonColor2()">Numbers</button>
-          <button id="button-icons" type="submit" onclick="buttonColor()">Icons</button>
+          <button class="button-numbers"  onclick="buttonColor2()"  value="numberss">Numbers</button>
+          <button id="button-icons" onclick="buttonColor()"  value="iconss">Icons</button>
         </div>
       </div>
       <div class="number-section">
         <h3 class="number-of-players">Number of Players</h3>
         <div class="button-group2">
-          <button class="button-one" type="submit" onclick="buttonOne()">1</button>
-          <button class="button-two" type="submit" onclick="buttonTwo()">2</button>
-          <button class="button-three" type="submit" onclick="buttonThree()">3</button>
-          <button class="button-four" type="submit" onclick="buttonFour()">4</button>
+          <button class="button-one" type="submit" onclick="buttonOne()" value="onee">1</button>
+          <button class="button-two" type="submit" onclick="buttonTwo()" value="twoo" >2</button>
+          <button class="button-three" type="submit" onclick="buttonThree()" value="threee" >3</button>
+          <button class="button-four" type="submit" onclick="buttonFour()" value="fourr" >4</button>
         </div>
       </div>
       <div class="grid-section">
         <h3 class="grid-size"> Grid Size</h3>
         <div class="button-group3">
-          <button class="button-grid4" type="submit" onclick="buttonGrid4()">4x4</button>
-          <button class="button-grid6" type="submit" onclick="buttonGrid6()">6x6</button>
+          <button class="button-grid4" type="submit" onclick="buttonGrid4()"  value="grid44">4x4</button>
+          <button class="button-grid6" type="submit" onclick="buttonGrid6()"  value="grid66">6x6</button>
         </div>
       </div>
-      <div class="start-rectangle">
-        <button type="submit" id="start">Start Game</button>
+      <div>
+        <button id="start" onclick=" GoToRequiredPage()">Start Game</button>
       </div>
 
     </div>
-
+    <div class="active"></div>
   </div>
   
   <!-- Game setup end -->
 
   
-
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>  
   <script src="script.js"></script>
 </body>
 </html>
