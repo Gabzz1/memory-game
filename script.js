@@ -253,14 +253,13 @@ const timeGenerator = () => {
 
 
 function GoToRequiredPage() {
-    //window.location.href = '4x4sologridIcons.html';
+    window.location.href = '4x4sologridIcons.html';
     /*if(numbers && three && grid6) {
       window.location.href = '6x6multiplayergrid.html';
     }
     else if(icons && one && grid4) {
         window.location.href = '4x4sologridIcons.html';
       }*/
-      console.log(icons)
   }
 
 
