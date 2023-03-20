@@ -1,3 +1,91 @@
+$(".button-hide").hide()
+$(".player-container").hide()
+$(".results-dark").hide()
+$(".pause").hide()
+$(".no_click").hide()
+//selecting buttons to open specific page in the main menu
+//---for the theme
+
+let container = 0;
+let theme_btn;
+
+$(".btn_num").click(() => {
+  container = 1
+  theme_btn = "first"
+  $(".btn_num").addClass("btn_on");
+  $(".btn_icon").removeClass("btn_on");
+})
+
+$(".btn_icon").click(() => {
+  container = 2
+  theme_btn = "i"
+  $(".btn_icon").addClass("btn_on");
+  $(".btn_num").removeClass("btn_on");
+})
+
+//--for the number of players
+let player = 0
+for (let i = 1; i <= 4; i++){
+  $(`.player_${i}`).click(()=>{
+    player = i
+    $(".small_btn").removeClass("btn_on")
+    $(`.player_${i}`).addClass("btn_on")
+  })
+}
+
+//--for the grid size
+let gridSize = 0;
+
+$(".grid4").click(()=>{
+    gridSize=4;
+    $(".grid4").addClass("btn_on");
+    $(".grid6").removeClass("btn_on");
+})
+
+$(".grid6").click(()=>{
+    gridSize=6;
+    $(".grid6").addClass("btn_on");
+    $(".grid4").removeClass("btn_on");
+})
+
+//-- click the start button and prepare the game page based on selected buttons(the theme, number of players and grid size)
+$(".start_btn").click(()=>{
+  if (gridSize===0 || container ===0 || player===0){
+      //nothing should happen so it should pass to the next condition
+  }else{
+      game_page();
+      main_grid(gridSize);
+      if (container === 1){
+          content_num();//for the fontawesome numbers
+      }else{
+          content_icon();//for the fontawesome icons
+      }
+      player_score_board()
+      start_time()
+    } 
+})
+
+function main_menu (){
+  $(".button-hide").hide()
+  $(".player-container").hide()
+  $(".logo_div").show()
+  $("body").addClass("bg-color")
+  $(".grid").removeClass(`grid${gridSize}`)
+  $(".setupStart-container").show()
+}
+main_menu();
+
+function game_page (){
+  $(".setupStart-container").hide()
+  $(".logo_div").hide()
+  $(".button-hide").show()
+  $(".player-container").show()
+  $("body").removeClass("bg-color")
+}
+
+
+
+/*
 const moves = document.getElementById("moves-count1");
 const moves2 = document.getElementById("moves-count2");
 const moves3 = document.getElementById("moves-count3");
@@ -259,10 +347,6 @@ function GoToRequiredPage() {
     }
     else if(icons && one && grid4) {
         window.location.href = '4x4sologridIcons.html';
-      }*/
+      }
   }
-
-
-
-
-
+*/
