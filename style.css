@@ -1,4 +1,160 @@
-/*Desktop*/
+.no_click{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0,0);
+}
+body{
+    font-family: 'Atkinson Hyperlegible';
+    font-weight: 700;
+    font-style: normal;
+}
+.bg-color{
+    background-color:  #152938;
+}
+main{
+    align-items: center;
+    position: relative; 
+}
+.mainIndex{
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*place for hidden "new-game" & "reset" buttons*/
+.button-hide{
+    width: 77.08%;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 67px;
+}
+#memory_logo{
+    font-size: 40px;
+    line-height: 50px;
+    color: #152938;
+}
+.top_btn_div{
+    display: flex;
+    width: 292px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.top_btn {
+    border-radius: 26px;
+    font-weight: 700;
+    font-size: 20px;
+    height: 52px;
+    border-width: 0px;
+}
+#menu{
+    display: none;
+    background-color: #FDA214;    
+}
+#restart{
+  width: 127px;
+  background-color: #FDA214;
+  color: #FCFCFC;
+}
+#new_game{
+  width: 149px;
+  background-color: #DFE7EC;
+  color: #152938;
+}
+
+/*Main Menu*/
+.setupStart-container{
+    width: 654px;
+    height: 559px;
+    background-color: #FCFCFC;
+    border-radius: 20px;
+    margin-top: 78px;
+}
+.setupStart-mainMenu{
+    width: 542px;
+    height: 100%;
+    margin: auto;
+}
+.setupStart-mainMenu .select-h3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    color: #7191A5;
+    margin-top:33px;
+    margin-bottom: 16px;
+}
+.select_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.theme-section .select_h3{
+  margin-top: 56px;
+} 
+.button-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn {
+    border-style: none;
+    background:#BCCED9;
+    border-radius: 26px;
+    height: 52px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.btn:hover{
+    background: #6395B8;
+    cursor: pointer;
+}
+.btn:active{
+    background: #304859;
+}
+.btn_on{
+    background: #304859;
+}
+.mid_btn{
+    width: 256px;
+}
+.small_btn{
+    width: 119px;
+}
+.start_btn{
+    border-style: none;
+    width: 100%;
+    height: 70px;
+    background: #FDA214;
+    border-radius: 35px;
+    margin-top: 33px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #FCFCFC;
+}
+.start_btn:hover{
+    background: #FFB84A;
+    cursor: pointer;
+}
+  
+
+
+
 /*Game Setup Start
 body{
     width: 1440px;
