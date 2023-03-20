@@ -11,49 +11,90 @@
   <script src="https://kit.fontawesome.com/6b8eeb21dd.js" crossorigin="anonymous"></script>
   <title>Frontend Mentor | Memory game</title>
 </head>
-<body>
+<body class="backgroundColor">
+  <main>
+  <div class="mainIndex">
+    <div class="top">
+        
+      <div class="main_l">
+       <h2 id="memory_logo">memory</h2>
 
-  <!-- Game setup start -->
-  <div class="setupStart-container">
-    <div class="setupStart-heading">
-      <h1 class="first-heading">memory</h1>
-    </div>
-    <div class="rectangle">
-      <div class="theme-section">
-        <h3 class="select-theme">Select Theme</h3>
-        <div class="button-group1">
-          <button class="button-numbers"  onclick="buttonColor2()"  value="numberss">Numbers</button>
-          <button id="button-icons" onclick="buttonColor()"  value="iconss">Icons</button>
-        </div>
       </div>
-      <div class="number-section">
-        <h3 class="number-of-players">Number of Players</h3>
-        <div class="button-group2">
-          <button class="button-one" type="submit" onclick="buttonOne()" value="onee">1</button>
-          <button class="button-two" type="submit" onclick="buttonTwo()" value="twoo" >2</button>
-          <button class="button-three" type="submit" onclick="buttonThree()" value="threee" >3</button>
-          <button class="button-four" type="submit" onclick="buttonFour()" value="fourr" >4</button>
-        </div>
-      </div>
-      <div class="grid-section">
-        <h3 class="grid-size"> Grid Size</h3>
-        <div class="button-group3">
-          <button class="button-grid4" type="submit" onclick="buttonGrid4()"  value="grid44">4x4</button>
-          <button class="button-grid6" type="submit" onclick="buttonGrid6()"  value="grid66">6x6</button>
-        </div>
-      </div>
-      <div>
-        <button id="start" onclick=" GoToRequiredPage()">Start Game</button>
-      </div>
+       <div top_btn_div>
+         <button class="menu_btn top_btn" id="menu">menu</button>
+         <button class="btn_restart top_btn" id="restart">Restart</button>
+         <button  class="btn_new top_btn" id="new_game">New Game</button>
+       </div>
+     </div>
+   <div class="grid"></div>  
 
+    <!-- Game setup start -->
+    <div class="setupStart-container">
+      <div class="setupStart-mainMenu">
+        <!--Theme-->
+        <div class="select_div theme-section">
+          <h3 class="select-h3">Select Theme</h3>
+          <div class="button-select">
+            <button class="btn mid_btn btn_num dark_blue_btn" type="button" name="numbers">Numbers</button>
+            <button class="btn mid_btn btn_icon light_blue_btn" type="button" name="Icons">Icons</button>
+          </div>
+        </div>
+        <!--Player Number-->
+        <div class="select_div">
+          <h3 class="select-h3">Number of Players</h3>
+          <div class="button-select">
+            <button class="btn small_btn player_1 " type="button" name="one">1</button>
+            <button class="btn small_btn player_2" type="button" name="two">2</button>
+            <button class="btn small_btn player_3" type="button" name="three">3</button>
+            <button class="btn small_btn player_4" type="button" name="four">4</button>
+          </div>
+        </div>
+        <!--Grid Size-->
+        <div class="select_div">
+          <h3 class="select-h3"> Grid Size</h3>
+          <div class="button-select">
+            <button class="btn mid_btn btn4" type="button" name="4x4grid">4x4</button>
+            <button class="btn mid_btn btn6" type="button" name="6x6grid">6x6</button>
+          </div>
+        </div>
+        <!--Start Button-->
+        <button  class="start_btn" type="button" name="start">Start Game</button>
+    
+    <!-- Game setup end -->
+      </div>
     </div>
-    <div class="active"></div>
+
+    <div class="player-container large-player-container"> </div>
+
+    <div class="results-dark">
+      <div class="modal">
+        <h2 class="heading">Game Over</h2>
+        <p class="sub-heading">Game over! here are the results...</p>
+        <div class="player-list"></div>
+        <div class="results-button-container">
+          <button class="results_btn results_restart" type="button" name="button">Restart</button>
+          <button class="results_btn results_new_game" type="button" name="button">New Game</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pause ">
+      <div id="pause_cont" class="modal">
+        <div class="pause_btn_cnt ">
+          <button class="results_btn results_restart ph" type="button" name="button">Restart</button>
+          <button class="results_btn results_new_game ph" type="button" name="button">New Game</button>
+          <button id="resume_btn" class="results_btn resume ph" type="button" name="button">Resume Game</button>
+        </div>
+      </div>
+    </div>
+
   </div>
+  <div class="no_click"></div>
   
-  <!-- Game setup end -->
-
+  </main>
   
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/e7181e4259.js" crossorigin="anonymous"></script>
 </body>
 </html>
