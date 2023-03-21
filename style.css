@@ -71,6 +71,13 @@ main{
 }
 
 /*Main Menu*/
+.logo_div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 154px;
+}
 .setupStart-container{
     width: 654px;
     height: 559px;
