@@ -1,3 +1,13 @@
+let screen_width = screen.width;
+let MatchedCards = [];
+let clickedItem = [];
+let score = [0,0,0,0];
+let playerIndex = 0;
+let moves = 0;
+correct_pick = 0;
+let seconds = 0
+let minutes = 0
+let timeCount = seconds < 10 ? `0${seconds}`: seconds
 $(".button-hide").hide()
 $(".player-container").hide()
 $(".results-dark").hide()
@@ -36,16 +46,16 @@ for (let i = 1; i <= 4; i++){
 //--for the grid size
 let gridSize = 0;
 
-$(".grid4").click(()=>{
+$(".grid4x4").click(()=>{
     gridSize=4;
-    $(".grid4").addClass("btn_on");
-    $(".grid6").removeClass("btn_on");
+    $(".grid4x4").addClass("btn_on");
+    $(".grid6x6").removeClass("btn_on");
 })
 
-$(".grid6").click(()=>{
+$(".grid6x6").click(()=>{
     gridSize=6;
-    $(".grid6").addClass("btn_on");
-    $(".grid4").removeClass("btn_on");
+    $(".grid6x6").addClass("btn_on");
+    $(".grid4x4").removeClass("btn_on");
 })
 
 //-- click the start button and prepare the game page based on selected buttons(the theme, number of players and grid size)
@@ -54,7 +64,7 @@ $(".start_btn").click(()=>{
       //nothing should happen so it should pass to the next condition
   }else{
       game_page();
-      main_grid(gridSize);
+      gridContainer(gridSize);
       if (container === 1){
           content_num();//for the fontawesome numbers
       }else{
@@ -83,81 +93,305 @@ function game_page (){
   $("body").removeClass("bg-color")
 }
 
+//Generate the grid
+
+function gridContainer(gridSize){
+  $(".grid").addClass(`grid${gridSize}`)
+
+  gridGenerator()
+}
+
+function gridGenerator(){
+  for(let i = 0; i < gridSize**2; i++ ){
+    $("<div></div>").addClass(`grid-item${gridSize} ${i}`).appendTo(".grid").click(()=>{
+        let item_div = $(`.grid > .${i}`)
+
+        if (item_div.hasClass("clicked") ){
+            //pass
+        }else{
+            $(`div.grid > .${i}`).addClass("right clicked")
+        let item = $(`div.grid > .${i} > ${theme_btn}`)
+        item.show()
+        chosen_item(item)
+        check_ans(item)
+        console.log(correct_pick,chosen_item)
+        // click_move()
+        }
+    });
+  }
+}
+
+function icon_val (input){
+  let cl_string = input.attr("class")
+  let class_list = cl_string.split("")
+  return (class_list[1])
+}
+
+function chosen_item(item_div){
+  if (clickedItem.length < 2 ){
+    clickedItem.push(item_div)
+  }else{
+    clickedItem.length = 0;
+    clickedItem.push(item_div)
+  }
+  
+}
+
+function check_item(status){
+  if (status === 'good'){
+    clickedItem[0].parent().removeClass('right').addClass('wrong')
+    clickedItem[1].parent().removeClass('right').addClass('wrong')
+  }
+  if (status === 'bad'){
+    clickedItem[0].hide()
+    clickedItem[1].hide()
+    clickedItem[0].parent().removeClass('wrong')
+    clickedItem[1].parent().removeClass('wrong')
+  }
+
+}
+
+function game_over(){
+  if (correct_pick === opt**2 ){
+    $(".results_dark").show()
+    result_scores(score)
+    clearInterval(playerTime)
+  }
+}
+
+
+// comparing if the two clicked items are match using their class names
+
+function isMatch(value){
+  if (value[0] === value[1]){
+      correct_pick +=2
+      setTimeout(()=>{
+        check_item('good')},1000)
+      // set new score
+      score[playerIndex]++;
+      $(`.b${playerIndex} > .h4_score`).text(`${score[playerIndex]*5}`)
+  }else{
+    clickedItem[0].parent().removeClass('right clicked').addClass('wrong')
+    clickedItem[1].parent().removeClass('right clicked').addClass('wrong')
+    setTimeout(()=>{
+      check_item('bad')},1000)
+  }
+  
+}
+
+function check_ans(item){
+  if (MatchedCards.length <2){
+      MatchedCards.push(icon_val(item))
+      if (MatchedCards.length === 2){
+          equal(MatchedCards)
+          //if current player got matched cards, the player plays on, else, move to the next player
+          if(player === 1){
+              
+          }else{
+              setCurrentPlayer()
+          }
+          MatchedCards.length = 0;
+          click_move()
+
+      }
+  }
+
+}
+
+function setCurrentPlayer(){
+  if (playerIndex < player-1){
+    playerIndex++
+  }else{
+    playerIndex = 0;
+  }
+  $(`.player_board`).removeClass("current_player")
+  $(`.b${playerIndex}`).addClass("current_player")
+}
+
+// Filling in the grid with numbers or icons based on option selected
+
+// for numbers
+
+function randomNumbers(num){
+  let numArray = []
+  let i = 0;
+  while(numArray.length < num**2) {
+      numArray.push(i,i);
+      i++;
+  }
+  numArray.sort(()=> 0.5-Math.random())
+  return numArray;
+}
+
+// for icons
+let icons = [
+  '<i class="fa-solid fa-futbol"></i>',
+  '<i class="fa-solid fa-anchor"></i>',
+  '<i class="fa-solid fa-flask"></i>',
+  '<i class="fa-solid fa-sun"></i>',
+  '<i class="fa-solid fa-hand-spock"></i>',
+  '<i class="fa-solid fa-bug"></i>',
+  '<i class="fa-solid fa-moon"></i>',
+  '<i class="fa-solid fa-snowflake"></i>',
+  '<i class="fa-solid fa-turkish-lira-sign"></i>',
+  '<i class="fa-solid fa-car"></i>',
+  '<i class="fa-solid fa-cat"></i>',
+  '<i class="fa-solid fa-heart"></i>',
+  '<i class="fa-solid fa-paw"></i>',
+  '<i class="fa-solid fa-sack-dollar"></i>',
+  '<i class="fa-solid fa-frog"></i>',
+  '<i class="fa-solid fa-ghost"></i>',
+  '<i class="fa-solid fa-mosquito"></i>',
+  '<i class="fa-solid fa-poo"></i>',
+  '<i class="fa-solid fa-plane"></i>',
+]
+
+function content_num(){
+
+  let list = randomNumbers(gridSize)
+  for(let i = 0; i < gridSize**2; i++ ){
+     let num = list[i]
+      $(`<h1>${num}</h1>`).addClass(`card${gridSize} num_${num}`).appendTo($(`div.grid > .${i}`))
+
+  }
+  $(".no_click").show()
+  setTimeout(()=>{
+
+      for(let i = 0; i < gridSize**2; i++ ){
+          $(`div.grid > .${i} > h1`).hide()
+      }
+      $(".no_click").hide()
+  }, 3000)
+
+}
+
+function content_icon(){
+
+  let list = num_func(gridSize)
+  for(let i = 0; i < gridSize**2; i++ ){
+     let num = list[i]
+      $(icons[num]).addClass(`icon${gridSize}`).appendTo($(`div.grid > .${i}`))
+  }
+  $(".no_click").show()
+  setTimeout(()=>{
+      for(let i = 0; i < gridSize**2; i++ ){
+          $(`div.grid > .${i} > i`).hide()
+      }
+      $(".no_click").hide()
+  }, 3000)
+
+}
+
+$(".btn_new").click(()=>{
+  document.location.reload()
+});
+
+$(".results_new_game").click(()=>{
+  document.location.reload()
+});
+
+$(".btn_restart").click(()=>{
+  clear_grid()
+  clearInterval(playerTime)
+  minutes = 0
+  seconds = 0
+  start_time()
+});
+
+$(".results_restart").click(()=>{
+  clear_grid()
+  minutes = 0
+  seconds = 0
+  $(".results_dark").hide()
+  $(".player_list > ").remove()
+  $(".pause").hide()
+  start_time()
+});
+
+$(".resume").click(()=> {
+  $(".pause").hide()
+  start_time()
+});
+
+$("#menu").click(()=>{
+  pause()
+  clearInterval(myTime)
+});
+
+function player_score_board(){
+  $(".player-container").show()
+    if (player > 1){
+      for (let i=0; i < player; i++ ){
+        $("<div>").addClass(`player_board b${i}`).appendTo($(".player-container"))
+
+        if (screen_width < 420){
+          $("<h3>").addClass("h3_title ").text(`P${i+1}`).appendTo($(`.b${i}`));
+        }else{
+          $("<h3>").addClass("h3_title").text(`Player ${i+1}`).appendTo($(`.b${i}`))
+        }
+        $("<h4>").addClass("h4_score").text(`${0}`).appendTo($(`.b${i}`))
+        //initial current player
+        $(`.b${playerIndex}`).addClass("current_player")
+        console.log(screen_width)
+      }
+    }else{
+      for (let i=0; i < 2; i++ ){
+        $("<div>").addClass(`player_board b${i}`).appendTo($(".player-container"))
+      }
+      $("<h3>").addClass("h3_title").text(`Time`).appendTo($(`.b0`))
+      $("<h4>").addClass("h4_p1 time").text(`0:00`).appendTo($(`.b0`))
+
+      $("<h3>").addClass("h3_title").text(`Moves`).appendTo($(`.b1`))
+      $("<h4>").addClass("h4_p1 moves").text(`${moves}`).appendTo($(`.b1`))
+
+    }
+      // score board container size
+      let container_size = $(".player_board").length
+      if (container_size === 2 && player < 2){
+          $(".player-container").removeClass("large-container").addClass("small_cont2")
+          $(".player_board").addClass("player_board_2");
+      }else if (container_size === 2) {
+          $(".player-container").removeClass("large-container").addClass("small_cont")
+      }else if (container_size === 3) {
+          $(".player-container").removeClass("large-container").addClass("mid_cont")
+      }
+}
+
+let playerTime = setInterval(()=>{
+  time()
+},1000)
+clearInterval(playerTime)
+
+function start_time(){
+playerTime = setInterval(()=>{
+  time()
+},1000)
+}
+
+function time(){
+  seconds++;
+  if (seconds === 60) {
+    minutes++
+    seconds=0
+  }
+  timeCount = seconds < 10 ? `0${seconds}`: seconds
+  $(".time").text(`${minutes}:${timeCount}`);
+}
+
+function click_move(){
+  ++moves
+  $(".moves").text(`${moves}`)
+  game_over()
+}
+
+
+
+
+
 
 
 /*
-const moves = document.getElementById("moves-count1");
-const moves2 = document.getElementById("moves-count2");
-const moves3 = document.getElementById("moves-count3");
-const moves4 = document.getElementById("moves-count4");
-const movesSolo = document.getElementById("moves-count-solo");
-const timeValue = document.getElementById("time-count");
-const cards = document.querySelectorAll('#cards');
-const cards4x4 = document.querySelectorAll('#cards4x4');
-const wrapper4 = document.getElementById('wrapper4x4');
-const modal = document.getElementById("whole-page-result");
-const controls = document.getElementById("controls-container");
-const movesResult = document.getElementById("finished-moves");
-const movesResult6x6 = document.getElementById("finished-moves-6x6");
-const timeResult = document.getElementById("finished-time");
-const setupNewGame = document.querySelector(".result-new-game");
-const restart = document.querySelector(".result-restart");
-const numbers = document.querySelector(".button-numbers");
-const icons = document.getElementById("button-icons");
-const one = document.querySelector(".button-one");
-const two = document.querySelector(".button-two");
-const three = document.querySelector(".button-three");
-const four = document.querySelector(".button-four");
-const grid4 = document.querySelector(".button-grid4");
-const grid6 = document.querySelector(".button-grid6");
-
-
-let hasFlippedCard = false;
-let lockBoard = false;
-let firstCard, secondCard;
-
-//create a function to flip the cards
-function flipCard() {
-  if (lockBoard) return;
-  if (this === firstCard) return;
-
-  this.classList.add('flip');
-
-  if (!hasFlippedCard) {
-    hasFlippedCard = true;
-    firstCard = this;
-    firstCard.style.backgroundColor = "#BCCED9";
-
-    return;
-  }
-  
-
-  secondCard = this;
-  secondCard.style.backgroundColor = "#BCCED9";
-  movesCounter();
-  checkForMatch();
-}
-
-//create a function to check if both cards are a match. If not unflip them.
-function checkForMatch() {
-    
-  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
-  if (isMatch) {
-    disableCards();
-    winCount += 1;
-    if (winCount === 8){
-      movesResult.innerHTML = `${movesCount}`;
-      stopGame();
-    }
-    if (winCount === 18){
-      movesResult6x6.innerHTML = `${movesCount}`;
-      stopGame();
-    }
-  } else {
-    unflipCards();
-  }
-    
-
+ 
   //isMatch ? disableCards() : unflipCards();
 
 
