@@ -383,7 +383,7 @@ main{
     color: #152938;
     background: #DFE7EC;
 }
-.player_list{
+.player-list{
     width: 542px;
     display: flex;
     flex-direction: column;

@@ -406,7 +406,7 @@ function clear_grid(){
   player_score_board();
 }
 
-function resultModal(playerScore){
+function who_won(arr){
 
   if (player === 1 ){
     $(".heading").text(`You did it!`)
@@ -414,61 +414,60 @@ function resultModal(playerScore){
     return
   }
   count = 1
-  for (let i = 1; i < playerScore.length; i++ ){
-    if (playerScore[0].score === playerScore[i].score){
-        $(".heading").text(`It's a tie!`);
+  for (let i = 1; i < arr.length; i++ ){
+    if (arr[0].score === arr[i].score){
+        $(".heading").text(`It's a tie!`)
         count++
-        highlight(count);
+        make_dark(count)
     }
   }
-  if(playerScore[0].score != playerScore[1].score) {
-      $(".heading").text(`Player ${playerScore[0].player} Wins!`)
-      highlight(1);
+  if(arr[0].score != arr[1].score) {
+      $(".heading").text(`Player ${arr[0].player} Wins!`)
+      make_dark(1)
   }
 }
-//highlight function
-
-function highlight(num){
+//paint top players score dark
+function make_dark(num){
   for(let i =0; i < num; i++){
     $(`.r${i}`).addClass("top_player")
     $(`.r${i} > `).addClass("top_ply_cnt")
   }
 }
 
-//creating a function to display player scores from highest score to lowest
-function displayPlayerScores(playerScore){
+//Creating objects(players:scores) and arranging in desc.. order
+function player_score_list(arr){
   let temp =[]
   for(let i =0; i < player; i++){
-    temp.push({player : i+1, score: playerScore[i]})
+    temp.push({player : i+1, score: arr[i]})
   }
-  let new_list = temp.sort((a,b)=>{return(b.score-a.score)})
-  return new_list;
+  let new_list = temp.sort((x,y)=>{return(y.score-x.score)})
+  return new_list
 }
 
-// function to launch game over score
-function result_scores(playerScore){
-  let list = displayPlayerScores(playerScore)
+//-------------------------------------  lunch Game over score
+function result_scores(arr){
+  let list = player_score_list(arr)
   if (player === 1){
     $("<div>").addClass(`player_results r${1}`).appendTo($(".player-list"))
     $("<div>").addClass(`player_results r${2}`).appendTo($(".player-list"))
 
-    $("<p>").addClass("p_cnt player_results_p").text(`Time Elapsed`).appendTo($(`.r${1}`))
-    $("<h2>").addClass("p_cnt player_results_h2").text(`${min}:${time_sec}`).appendTo($(`.r${1}`))
+    $("<p>").addClass("player-container player_results_p").text(`Time Elapsed`).appendTo($(`.r${1}`))
+    $("<h2>").addClass("p_cnt player_results_h2").text(`${minutes}:${timeCount}`).appendTo($(`.r${1}`))
 
-    $("<p>").addClass("p_cnt player_results_p").text(`Moves Taken`).appendTo($(`.r${2}`))
+    $("<p>").addClass("player-container player_results_p").text(`Moves Taken`).appendTo($(`.r${2}`))
     $("<h2>").addClass("p_cnt player_results_h2").text(`${moves} Moves`).appendTo($(`.r${2}`))
-    resultModal(list)
+    who_won(list)
     return
   }
   for (let i=0; i < list.length; i++){
     let player_num = list[i].player
     let score = list[i].score
-    $("<div>").addClass(`player_results r${i}`).appendTo($(".player_list"))
+    $("<div>").addClass(`player_results r${i}`).appendTo($(".player-list"))
     $("<p>").addClass("p_cnt player_results_p").text(`Player ${player_num}`).appendTo($(`.r${i}`))
     $("<h2>").addClass("p_cnt player_results_h2").text(`${score} pairs`).appendTo($(`.r${i}`))
   }
 
-  resultModal(list);
+  who_won(list)
 
 }
 
