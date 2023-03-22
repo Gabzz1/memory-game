@@ -245,28 +245,6 @@ let icons = [
   '<i class="fa-solid fa-plane"></i>',
 ]
 
-/*let numb = [
-  '<i class="fa-solid fa-1"></i>',
-  '<i class="fa-solid fa-2"></i>',
-  '<i class="fa-solid fa-3"></i>',
-  '<i class="fa-solid fa-4"></i>',
-  '<i class="fa-solid fa-5"></i>',
-  '<i class="fa-solid fa-6"></i>',
-  '<i class="fa-solid fa-7"></i>',
-  '<i class="fa-solid fa-8"></i>',
-  '<i class="fa-solid fa-9"></i>',
-  '<i class="fa-solid fa-0"></i>',
-  '<i class="fa-solid fa-10"></i>',
-  '<i class="fa-solid fa-11"></i>',
-  '<i class="fa-solid fa-12"></i>',
-  '<i class="fa-solid fa-13"></i>',
-  '<i class="fa-solid fa-14"></i>',
-  '<i class="fa-solid fa-15"></i>',
-  '<i class="fa-solid fa-16"></i>',
-  '<i class="fa-solid fa-17"></i>',
-  '<i class="fa-solid fa-18"></i>',
-]
-*/
 function content_num(){
 
   let list = num_func(gridSize)
@@ -403,203 +381,97 @@ function click_move(){
   game_over()
 }
 
-
-
-
-
-
-
-/*
- 
-  //isMatch ? disableCards() : unflipCards();
-
-
+function clear_grid(){
+  MatchedCards.length = 0;
+  clickedItem.length =0;
+  playerIndex = 0;
+  moves = 0;
+  correct_pick=0;
+  // clear score
+  for (let i = 0; i < score.length; i++){
+    score[i]=0;
+  }
+  $(`.grid-item${gridSize} > `).remove();
+  $(`.grid-item${gridSize}`).removeClass("right wrong");
+  $(".player-container > div").remove();
+  $(".grid > div").remove();
+  // remove number or icon items in grid
+  //Generate new set of number or icon items
+  gridGenerator()
+  if(container === 1){
+    content_num();
+  }else if(container === 2){
+    content_icon();
+  }
+  player_score_board();
 }
 
-//create a funtion to disable the flip function when the cards are a match
-function disableCards() {
-  firstCard.removeEventListener('click', flipCard);
-  secondCard.removeEventListener('click', flipCard);
-  firstCard.style.backgroundColor="#FDA214";
-  secondCard.style.backgroundColor="#FDA214";
+function resultModal(playerScore){
 
-  resetBoard();
-}
-
-//create a function that unflips the cards
-function unflipCards() {
-  lockBoard = true;
-
-  setTimeout(() => {
-    firstCard.classList.remove('flip');
-    secondCard.classList.remove('flip');
-    firstCard.style.backgroundColor ="#152938";
-    secondCard.style.backgroundColor = "#152938";
-
-    resetBoard();
-  }, 1000);
-
-
-}
-
-function resetBoard() {
-  [hasFlippedCard, lockBoard] = [false, false];
-  [firstCard, secondCard] = [null, null];
-}
-//6x6 shuffle function
-(function shuffle() {
-  cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
-  });
-})();
-
-//4x4 shuffle function
-(function shuffle() {
-  cards4x4.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
-    card.style.order = randomPos;
-  });
-})();
-
-cards.forEach(card => card.addEventListener('click', flipCard));
-cards4x4.forEach(card => card.addEventListener('click', flipCard));
-
-
-//Initialize moves count
-let movesCount = 0;
-let movesCount2 = 0;
-let movesCount3 = 0;
-let movesCount4 = 0;
-let movesCountSolo = 0;
-let winCount = 0;
-
-//create moves count function for each player
-const movesCounter = () => {
-    movesCount += 1;
-    moves.innerHTML = `${movesCount}`;
-};
-
-const movesCounter2 = () => {
-  movesCount2 += 1;
-  moves2.innerHTML = `${movesCount2}`;
-};
-
-const movesCounter3 = () => {
-  movesCount3 += 1;
-  moves3.innerHTML = `${movesCount3}`;
-};
-
-const movesCounter4 = () => {
-  movesCount4 += 1;
-  moves4.innerHTML = `${movesCount4}`;
-};
-
-const movesCounterSolo = () => {
-  movesCountSolo += 1;
-  movesSolo.innerHTML = `${movesCountSolo}`;
-};
-
-//create a function to select current player and read moves
-
-
-//set time
-let seconds = 0,
-  minutes = 0;
-
-const timeGenerator = () => {
-    seconds += 1;
-    //set the minutes
-    if (seconds >= 60) {
-      minutes += 1;
-      seconds = 0;
+  if (player === 1 ){
+    $(".heading").text(`You did it!`)
+    $(".sub-heading").text(`Game over! Here's how you got on...`)
+    return
+  }
+  count = 1
+  for (let i = 1; i < playerScore.length; i++ ){
+    if (playerScore[0].score === playerScore[i].score){
+        $(".heading").text(`It's a tie!`);
+        count++
+        highlight(count);
     }
-    //set the format of the time before displaying
-    let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
-    let minutesValue = minutes < 10 ? `${minutes}` : minutes;
-    timeValue.innerHTML = `${minutesValue}:${secondsValue}`;
-    timeResult.innerHTML = `${minutesValue}:${secondsValue}`;
-  };
+  }
+  if(playerScore[0].score != playerScore[1].score) {
+      $(".heading").text(`Player ${playerScore[0].player} Wins!`)
+      highlight(1);
+  }
+}
+//highlight function
 
-  interval = setInterval(timeGenerator, 1000);
+function highlight(num){
+  for(let i =0; i < num; i++){
+    $(`.r${i}`).addClass("top_player")
+    $(`.r${i} > `).addClass("top_ply_cnt")
+  }
+}
 
+//creating a function to display player scores from highest score to lowest
+function displayPlayerScores(playerScore){
+  let temp =[]
+  for(let i =0; i < player; i++){
+    temp.push({player : i+1, score: playerScore[i]})
+  }
+  let new_list = temp.sort((a,b)=>{return(b.score-a.score)})
+  return new_list;
+}
 
-  const stopGame = () => {
-    modal.classList.remove('hide');
-    //controls.classList.add('hide');
-    clearInterval(interval);
+// function to launch game over score
+function result_scores(playerScore){
+  let list = displayPlayerScores(playerScore)
+  if (player === 1){
+    $("<div>").addClass(`player_results r${1}`).appendTo($(".player-list"))
+    $("<div>").addClass(`player_results r${2}`).appendTo($(".player-list"))
+
+    $("<p>").addClass("p_cnt player_results_p").text(`Time Elapsed`).appendTo($(`.r${1}`))
+    $("<h2>").addClass("p_cnt player_results_h2").text(`${min}:${time_sec}`).appendTo($(`.r${1}`))
+
+    $("<p>").addClass("p_cnt player_results_p").text(`Moves Taken`).appendTo($(`.r${2}`))
+    $("<h2>").addClass("p_cnt player_results_h2").text(`${moves} Moves`).appendTo($(`.r${2}`))
+    resultModal(list)
+    return
+  }
+  for (let i=0; i < list.length; i++){
+    let player_num = list[i].player
+    let score = list[i].score
+    $("<div>").addClass(`player_results r${i}`).appendTo($(".player_list"))
+    $("<p>").addClass("p_cnt player_results_p").text(`Player ${player_num}`).appendTo($(`.r${i}`))
+    $("<h2>").addClass("p_cnt player_results_h2").text(`${score} pairs`).appendTo($(`.r${i}`))
   }
 
+  resultModal(list);
 
-  restart.addEventListener('click',
-  (restartSameGame = () => {
-    modal.classList.add('hide');
-    
-  })
-  );
+}
 
-
- function buttonColor() {
-  icons.style.backgroundColor = "#304859";
-  numbers.style.backgroundColor = "#BCCED9";
-  numbers.classList.remove('active');
- }
- function buttonColor2() {
-  icons.style.backgroundColor = "#BCCED9";
-  numbers.style.backgroundColor = "#304859";
-  icons.classList.remove('active');
- }
-
- function buttonOne() {
-  one.style.backgroundColor = "#304859";
-  two.style.backgroundColor = "#BCCED9";
-  three.style.backgroundColor = "#BCCED9";
-  four.style.backgroundColor = "#BCCED9";
-  one.classList.add('active');
- }
- function buttonTwo() {
-  two.style.backgroundColor = "#304859";
-  one.style.backgroundColor = "#BCCED9";
-  three.style.backgroundColor = "#BCCED9";
-  four.style.backgroundColor = "#BCCED9";
-  two.classList.add('active');
- }
- function buttonThree() {
-  three.style.backgroundColor = "#304859";
-  two.style.backgroundColor = "#BCCED9";
-  one.style.backgroundColor = "#BCCED9";
-  four.style.backgroundColor = "#BCCED9";
-  three.classList.add('active');
- }
- function buttonFour() {
-  four.style.backgroundColor = "#304859";
-  two.style.backgroundColor = "#BCCED9";
-  three.style.backgroundColor = "#BCCED9";
-  one.style.backgroundColor = "#BCCED9";
-  four.classList.add('active');
- }
- 
- function buttonGrid4() {
-  grid4.style.backgroundColor = "#304859";
-  grid6.style.backgroundColor = "#BCCED9";
-  grid4.classList.add('active');
- }
- function buttonGrid6() {
-  grid4.style.backgroundColor = "#BCCED9";
-  grid6.style.backgroundColor = "#304859";
-  grid6.classList.add('active');
- }  
-
-
-
-
-function GoToRequiredPage() {
-    window.location.href = '4x4sologridIcons.html';
-    /*if(numbers && three && grid6) {
-      window.location.href = '6x6multiplayergrid.html';
-    }
-    else if(icons && one && grid4) {
-        window.location.href = '4x4sologridIcons.html';
-      }
-  }
-*/
+function pause(){
+  $(".pause").show()
+}

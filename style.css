@@ -315,9 +315,110 @@ main{
     letter-spacing: 5px;
     color: #152938;
 }
-
-
-
+.results-dark{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #F2F2F2;
+    border-radius: 20px;
+    width: 654px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+}
+.heading{
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #152938;
+    margin: 51px 0px 0px 0px ;
+}  
+.sub-heading{
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #7191A5;
+    margin: 16px 0px 40px 0px ;
+}
+.results-button-container{
+    width: 542px;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 69px 0px ;
+}
+.results_btn {
+    width: 264px;
+    height: 52px;
+    border-radius: 26px;
+    border: none;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+      font-weight: 700;
+    font-style: normal;
+}
+.results_btn:hover{
+    cursor: pointer;
+    background-color: #6395B8;
+}
+.results_restart{
+    color: #FCFCFC;
+    background: #FDA214;
+}
+.results_restart:hover{
+    background: #FFB84A;
+}
+.results_new_game{
+    color: #152938;
+    background: #DFE7EC;
+}
+.player_list{
+    width: 542px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 56px;
+}
+.player_results{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    border-radius: 10px;
+    background-color: #DFE7EC;
+}
+.player_results_h2{
+    font-size: 32px;
+    line-height: 40px;
+    color: #304859;
+    margin: 0px 32px;
+}
+.player_results_p{
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #7191A5;
+    margin: 0px 32px;
+}
+.top_player{
+    background-color: #152938;
+}
+.top_ply_cnt{
+    color: #FCFCFC;
+}
 
 
 /*Game Setup Start
