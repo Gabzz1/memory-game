@@ -21,7 +21,7 @@ let theme_btn;
 
 $(".btn_num").click(() => {
   container = 1
-  theme_btn = "first"
+  theme_btn = "h1"
   $(".btn_num").addClass("btn_on");
   $(".btn_icon").removeClass("btn_on");
 })
@@ -98,7 +98,7 @@ function game_page (){
 function gridContainer(gridSize){
   $(".grid").addClass(`grid${gridSize}`)
 
-  gridGenerator()
+  gridGenerator();
 }
 
 function gridGenerator(){
@@ -122,9 +122,9 @@ function gridGenerator(){
 }
 
 function icon_val (input){
-  let cl_string = input.attr("class")
-  let class_list = cl_string.split("")
-  return (class_list[1])
+  let cl_string = input.attr("class");
+  let class_list = cl_string.split(" ");
+  return (class_list[1]);
 }
 
 function chosen_item(item_div){
@@ -152,8 +152,8 @@ function check_item(status){
 }
 
 function game_over(){
-  if (correct_pick === opt**2 ){
-    $(".results_dark").show()
+  if (correct_pick === gridSize**2 ){
+    $(".results-dark").show()
     result_scores(score)
     clearInterval(playerTime)
   }
@@ -183,7 +183,7 @@ function check_ans(item){
   if (MatchedCards.length <2){
       MatchedCards.push(icon_val(item))
       if (MatchedCards.length === 2){
-          equal(MatchedCards)
+          isMatch(MatchedCards)
           //if current player got matched cards, the player plays on, else, move to the next player
           if(player === 1){
               
@@ -210,9 +210,8 @@ function setCurrentPlayer(){
 
 // Filling in the grid with numbers or icons based on option selected
 
-// for numbers
 
-function randomNumbers(num){
+function num_func(num){
   let numArray = []
   let i = 0;
   while(numArray.length < num**2) {
@@ -246,13 +245,34 @@ let icons = [
   '<i class="fa-solid fa-plane"></i>',
 ]
 
+/*let numb = [
+  '<i class="fa-solid fa-1"></i>',
+  '<i class="fa-solid fa-2"></i>',
+  '<i class="fa-solid fa-3"></i>',
+  '<i class="fa-solid fa-4"></i>',
+  '<i class="fa-solid fa-5"></i>',
+  '<i class="fa-solid fa-6"></i>',
+  '<i class="fa-solid fa-7"></i>',
+  '<i class="fa-solid fa-8"></i>',
+  '<i class="fa-solid fa-9"></i>',
+  '<i class="fa-solid fa-0"></i>',
+  '<i class="fa-solid fa-10"></i>',
+  '<i class="fa-solid fa-11"></i>',
+  '<i class="fa-solid fa-12"></i>',
+  '<i class="fa-solid fa-13"></i>',
+  '<i class="fa-solid fa-14"></i>',
+  '<i class="fa-solid fa-15"></i>',
+  '<i class="fa-solid fa-16"></i>',
+  '<i class="fa-solid fa-17"></i>',
+  '<i class="fa-solid fa-18"></i>',
+]
+*/
 function content_num(){
 
-  let list = randomNumbers(gridSize)
+  let list = num_func(gridSize)
   for(let i = 0; i < gridSize**2; i++ ){
      let num = list[i]
       $(`<h1>${num}</h1>`).addClass(`card${gridSize} num_${num}`).appendTo($(`div.grid > .${i}`))
-
   }
   $(".no_click").show()
   setTimeout(()=>{
@@ -262,7 +282,6 @@ function content_num(){
       }
       $(".no_click").hide()
   }, 3000)
-
 }
 
 function content_icon(){
@@ -315,7 +334,7 @@ $(".resume").click(()=> {
 
 $("#menu").click(()=>{
   pause()
-  clearInterval(myTime)
+  clearInterval(playerTime)
 });
 
 function player_score_board(){
