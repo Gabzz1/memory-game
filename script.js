@@ -61,12 +61,12 @@ $(".grid6x6").click(()=>{
 //-- click the start button and prepare the game page based on selected buttons(the theme, number of players and grid size)
 $(".start_btn").click(()=>{
   if (gridSize===0 || container ===0 || player===0){
-      //nothing should happen so it should pass to the next condition
+      //nothing should happen
   }else{
       game_page();
       gridContainer(gridSize);
       if (container === 1){
-          content_num();//for the fontawesome numbers
+          content_num();//for numbers
       }else{
           content_icon();//for the fontawesome icons
       }
@@ -139,8 +139,8 @@ function chosen_item(item_div){
 
 function check_item(status){
   if (status === 'good'){
-    clickedItem[0].parent().removeClass('right').addClass('wrong')
-    clickedItem[1].parent().removeClass('right').addClass('wrong')
+    clickedItem[0].parent().addClass('right')
+    clickedItem[1].parent().addClass('right')
   }
   if (status === 'bad'){
     clickedItem[0].hide()
@@ -259,7 +259,7 @@ function content_num(){
           $(`div.grid > .${i} > h1`).hide()
       }
       $(".no_click").hide()
-  }, 3000)
+  }, 1500)
 }
 
 function content_icon(){
@@ -275,7 +275,7 @@ function content_icon(){
           $(`div.grid > .${i} > i`).hide()
       }
       $(".no_click").hide()
-  }, 3000)
+  }, 1500)
 
 }
 
@@ -299,8 +299,8 @@ $(".results_restart").click(()=>{
   clear_grid()
   minutes = 0
   seconds = 0
-  $(".results_dark").hide()
-  $(".player_list > ").remove()
+  $(".results-dark").hide()
+  $(".player-list > ").remove()
   $(".pause").hide()
   start_time()
 });

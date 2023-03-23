@@ -64,10 +64,18 @@ main{
   background-color: #FDA214;
   color: #FCFCFC;
 }
+#restart:hover{
+    cursor: pointer;
+    background-color: #FFB84A;
+}
 #new_game{
   width: 149px;
   background-color: #DFE7EC;
   color: #152938;
+}
+#new_game:hover{
+    cursor: pointer;
+    background-color: #6395B8;
 }
 
 /*Main Menu*/
@@ -739,6 +747,7 @@ h3 {
 
 /*Game Board Starts*/
 /*6x6 Multiplayer Board*/
+/*
 #controls-container {
     overflow: hidden;
     background: #FCFCFC;
