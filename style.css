@@ -530,7 +530,7 @@ main{
         width: 78px;
         height: 40px;
         border-radius: 26px;
-        margin-left: 10px;
+        align-self: center;
     }
     .top{
       width: 87.2%;
