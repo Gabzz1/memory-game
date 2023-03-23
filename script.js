@@ -321,7 +321,7 @@ function player_score_board(){
       for (let i=0; i < player; i++ ){
         $("<div>").addClass(`player_board b${i}`).appendTo($(".player-container"))
 
-        if (screen_width < 420){
+        if (screen_width < 426){
           $("<h3>").addClass("h3_title ").text(`P${i+1}`).appendTo($(`.b${i}`));
         }else{
           $("<h3>").addClass("h3_title").text(`Player ${i+1}`).appendTo($(`.b${i}`))
